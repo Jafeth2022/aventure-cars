@@ -1,0 +1,46 @@
+var scene = createSprite(200,200);
+scene.setAnimation("meadow_1");
+
+var monstertruck_06_1 = createSprite(20,320);
+monstertruck_06_1.setAnimation("monstertruck_06_1");
+monstertruck_06_1.velocityX = 17;
+monstertruck_06_1.scale = 0.2;
+
+var monstertruck_03_1 = createSprite(380,200);
+monstertruck_03_1.setAnimation("monstertruck_03_1");
+monstertruck_03_1.velocityX = 18;
+monstertruck_03_1.scale = 0.3;
+
+var monstertruck_02_1 = createSprite(20,320);
+monstertruck_02_1.setAnimation("monstertruck_02_1");
+monstertruck_02_1.velocityX = 20;
+monstertruck_02_1.scale = 0.2;
+
+
+function draw() {
+  background("white");
+  if(monstertruck_06_1.x > 430) {
+    monstertruck_06_1.x = 0;
+  }
+  if(monstertruck_03_1.x < -40) {
+    monstertruck_03_1.x = 400;
+  }
+  if(monstertruck_02_1.x > 430) {
+    monstertruck_02_1.x = 0;
+  }
+  
+  drawSprites();
+}
+
+function mousePressed() {
+  //cambiar la escena de fondo a una aterradora
+  scene.setAnimation("pine_trees_1");
+  //cambiar los peces a peces malos
+  monstertruck_03_1.setAnimation("monstertruck_03_1");
+  monstertruck_03_1.setAnimation("monstertruck_03_1");
+  
+  
+}
+
+
+
